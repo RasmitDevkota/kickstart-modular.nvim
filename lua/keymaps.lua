@@ -60,4 +60,39 @@ vim.keymap.set('n', '[c', function()
   require('treesitter-context').go_to_context(vim.v.count1)
 end, { silent = true })
 
+local function insert_exam_question(num_parts)
+  local lines = {
+    '\\question .',
+  }
+
+  if num_parts > 0 then
+    table.insert(lines, '\\begin{parts}')
+    for i = 1, num_parts do
+      table.insert(lines, '\t\\part .')
+      table.insert(lines, '\t\\begin{solution}')
+      table.insert(lines, '\t\t')
+      table.insert(lines, '\t\\end{solution}')
+
+      if i < num_parts then
+        table.insert(lines, '\t')
+      end
+    end
+    table.insert(lines, '\\end{parts}')
+  else
+    table.insert(lines, '\\begin{solution}')
+    table.insert(lines, '\t')
+    table.insert(lines, '\\end{solution}')
+  end
+
+  -- table.insert(lines, '')
+
+  vim.api.nvim_put(lines, 'l', true, true)
+end
+
+-- Map the function to a command with an argument
+vim.api.nvim_create_user_command('QP', function(opts)
+  local num_parts = tonumber(opts.args) or 0
+  insert_exam_question(num_parts)
+end, { nargs = 1 })
+
 -- vim: ts=2 sts=2 sw=2 et

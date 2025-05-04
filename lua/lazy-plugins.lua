@@ -97,7 +97,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/mini',
 
-  require 'kickstart/plugins/treesitter',
+  -- require 'kickstart/plugins/treesitter',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -121,7 +121,7 @@ require('lazy').setup({
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
   --
-  'nvim-treesitter/nvim-treesitter-context',
+  -- 'nvim-treesitter/nvim-treesitter-context',
 
   {
     'amitds1997/remote-nvim.nvim',
@@ -153,6 +153,11 @@ require('lazy').setup({
       vim.opt.softtabstop = 4
       vim.opt.shiftwidth = 4
     end,
+  },
+
+  {
+    'micangl/cmp-vimtex',
+    lazy = false,
   },
 }, {
   ui = {

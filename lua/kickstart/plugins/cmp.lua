@@ -59,6 +59,16 @@ return {
           -- Select the [p]revious item
           ['<C-p>'] = cmp.mapping.select_prev_item(),
 
+          ['<Tab>'] = cmp.mapping.confirm { select = true }, -- Accept the current list item
+
+          -- ['<Tab>'] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     cmp.mapping.confirm { select = true } -- Accept the current list item
+          --   else
+          --     fallback()
+          --   end
+          -- end, { 'i', 's' }), -- Works in insert and select modes
+
           -- Scroll the documentation window [b]ack / [f]orward
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -105,6 +115,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'vimtex' },
         },
       }
     end,
