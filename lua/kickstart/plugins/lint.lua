@@ -7,6 +7,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        python = { 'pylint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
@@ -50,6 +51,9 @@ return {
           require('lint').try_lint()
         end,
       })
+
+      lint.linters.pylint.cmd = 'python'
+      lint.linters.pylint.args = { '-m', 'pylint', '-f', 'json' }
     end,
   },
 }

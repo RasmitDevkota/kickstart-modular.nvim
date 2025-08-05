@@ -11,7 +11,7 @@
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -89,7 +89,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/conform',
 
-  require 'kickstart/plugins/cmp',
+  require 'kickstart/plugins/blink-cmp',
 
   -- require 'kickstart/plugins/tokyonight',
 
@@ -97,7 +97,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/mini',
 
-  -- require 'kickstart/plugins/treesitter',
+  require 'kickstart/plugins/treesitter',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -122,6 +122,7 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
   --
   -- 'nvim-treesitter/nvim-treesitter-context',
+  -- { 'wellle/context.vim' },
 
   {
     'amitds1997/remote-nvim.nvim',
@@ -158,6 +159,11 @@ require('lazy').setup({
   {
     'micangl/cmp-vimtex',
     lazy = false,
+  },
+
+  {
+    'fladson/vim-kitty',
+    ft = 'kitty',
   },
 }, {
   ui = {
