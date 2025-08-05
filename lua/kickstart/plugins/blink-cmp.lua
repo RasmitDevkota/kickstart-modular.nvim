@@ -3,6 +3,7 @@ return {
     'saghen/blink.cmp',
     event = 'VimEnter',
     version = '1.*',
+    enabled = true,
     dependencies = {
       -- Snippet Engine
       {
