@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'tex' },
+  pattern = { '*.tex' },
   callback = function()
     vim.opt.tabstop = 4
     vim.opt.softtabstop = 4
@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'py' },
+  pattern = { '*.py' },
   callback = function()
     vim.opt.tabstop = 4
     vim.opt.softtabstop = 4
