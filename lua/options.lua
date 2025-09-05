@@ -9,6 +9,8 @@
 -- Enable syntax highlighting by default
 vim.opt.syntax = 'on'
 
+vim.opt.filetype = 'on'
+
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -78,5 +80,8 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
+
+-- Language-specific options
+vim.cmd('let g:c_syntax_for_h = 1')
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -197,6 +197,19 @@ return {
             },
           },
         },
+        clangd = {
+          cmd = {
+            "clangd",
+            "--std=c23",
+            "--gcc-toolchain=/usr/bin/gcc",
+          },
+          filetypes = { "c", "h", },
+          settings = {
+            clangd = {
+              fallbackFlags = { "-std=c23" },
+            }
+          },
+        }
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       }
 
