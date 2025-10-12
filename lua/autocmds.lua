@@ -14,6 +14,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
+  group = augroup('md'),
+  pattern = { 'md' },
+  callback = function()
+    vim.cmd 'SoftPencil'
+
+    vim.opt.conceallevel = 0
+
+    vim.opt.foldmethod = 'indent'
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
   group = augroup('tex'),
   pattern = { 'tex' },
   callback = function()
@@ -29,7 +41,7 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt.conceallevel = 0
 
     vim.opt.syntax = 'on'
-    vim.opt.foldmethod = 'syntax'
+    vim.opt.foldmethod = 'indent'
   end,
 })
 
