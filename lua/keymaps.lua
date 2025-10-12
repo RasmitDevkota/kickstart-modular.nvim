@@ -74,9 +74,9 @@ local function insert_exam_question(num_parts)
     table.insert(lines, '\\end{solution}')
   end
 
-  -- table.insert(lines, '')
+  table.insert(lines, '')
 
-  vim.api.nvim_put(lines, 'l', true, true)
+  vim.api.nvim_put(lines, 'l', false, true)
 end
 
 -- Map the function to a command with an argument
