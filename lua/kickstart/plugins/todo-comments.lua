@@ -1,9 +1,13 @@
 -- Highlight todo, notes, etc in comments
+---@module 'lazy'
+---@type LazySpec
 return {
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
+    ---@module 'todo-comments'
+    ---@type TodoOptions
     opts = {
       signs = false,     -- show icons in the signs column
       sign_priority = 8, -- sign priority
@@ -60,7 +64,7 @@ return {
         pattern = [[\@(KEYWORDS)]], -- ripgrep regex
         -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
       },
-    }
+    },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
