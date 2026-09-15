@@ -161,6 +161,10 @@ require('lazy').setup({
   },
 
   {
+    'rust-lang/rust.vim',
+  },
+
+  {
     'fladson/vim-kitty',
     ft = 'kitty',
   },
