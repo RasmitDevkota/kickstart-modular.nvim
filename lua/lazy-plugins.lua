@@ -13,16 +13,7 @@ require('lazy').setup({
   -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
   { 'NMAC427/guess-indent.nvim', opts = {} },
 
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
-  --
-  -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
-  --
-  --  This is equivalent to:
-  --    require('Comment').setup({})
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  -- NOTE: "gc"/"gcc" commenting is built into Neovim (see `:help commenting`), no plugin needed
 
   {
     'kiyoon/treesitter-indent-object.nvim',
@@ -147,17 +138,13 @@ require('lazy').setup({
       vim.opt.syntax = 'on'
       -- vim.opt.conceallevel = 0
 
-      vim.g.vimtex_complete_close_braces = 1
+      -- Off because nvim-autopairs already inserts the closing brace (otherwise you get `\begin{itemize}}`)
+      vim.g.vimtex_complete_close_braces = 0
       vim.g.vimtex_syntax_conceal_disable = 1
       vim.opt.tabstop = 4
       vim.opt.softtabstop = 4
       vim.opt.shiftwidth = 4
     end,
-  },
-
-  {
-    'micangl/cmp-vimtex',
-    lazy = false,
   },
 
   {

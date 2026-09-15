@@ -77,6 +77,18 @@ return {
 
       sources = {
         default = { 'lsp', 'path', 'snippets' },
+        per_filetype = {
+          -- VimTeX provides completion (commands, environments, \ref, \cite, ...) through omnifunc
+          tex = { inherit_defaults = true, 'omni' },
+        },
+        providers = {
+          omni = {
+            -- Also trigger completion right after these characters, e.g. `\ref{` or `\cite{a,`
+            override = {
+              get_trigger_characters = function() return { '\\', '{', ',' } end,
+            },
+          },
+        },
       },
 
       snippets = { preset = 'luasnip' },
